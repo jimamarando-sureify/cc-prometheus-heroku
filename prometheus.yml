@@ -3,13 +3,17 @@ global:
   evaluation_interval: 25s
 
 scrape_configs:
-  - job_name: "prometheus"
-    static_configs:
-      - targets: ["localhost:9090"]
-  - job_name: "temporal"
-    scrape_interval: 2s
+  - job_name: "otherInterestedParty_totalCompletedCount"
+    scrape_interval: 30s
     metrics_path: "/completedJourneys/count/otherInterestedParty"
     static_configs:
       - targets: ["cc-prometheus-exporter-itc-ea7e25346311.herokuapp.com"]
         labels:
-          group: 'temporal-2'
+          group: 'completedJourneys'
+  - job_name: "duplicatePolicyRequest_totalCompletedCount"
+    scrape_interval: 30s
+    metrics_path: "/completedJourneys/count/duplicatePolicyRequest"
+    static_configs:
+      - targets: ["cc-prometheus-exporter-itc-ea7e25346311.herokuapp.com"]
+        labels:
+          group: 'completedJourneys'
