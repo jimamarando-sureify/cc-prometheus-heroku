@@ -17,8 +17,9 @@ scrape_configs:
       - targets: ["cc-prometheus-exporter-itc-ea7e25346311.herokuapp.com"]
         labels:
           group: 'completedJourneys'
-  - job_name: "otherInterestedParty_totalCompletion_time"
-    scrape_interval: 30s
+  - job_name: "journeyAndStepsCompletionTime"
+    scrape_interval: 120s
+    scrape_timeout: 60s
     metrics_path: "/completedJourneys/steps/basicStats/otherInterestedParty"
     static_configs:
       - targets: ["cc-prometheus-exporter-itc-ea7e25346311.herokuapp.com"]
