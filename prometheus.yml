@@ -20,7 +20,7 @@ scrape_configs:
   - job_name: "journeyAndStepsCompletionTime"
     scrape_interval: 120s
     scrape_timeout: 60s
-    metrics_path: "/completedJourneys/steps/basicStats/otherInterestedParty"
+    metrics_path: "/completedJourneys/steps/basicStats"
     static_configs:
       - targets: ["cc-prometheus-exporter-itc-ea7e25346311.herokuapp.com"]
         labels:
