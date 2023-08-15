@@ -20,11 +20,10 @@ scrape_configs:
         labels:
           group: 'journeyTiming'
   - job_name: "ccMetrics"
-    scrape_interval: 30s
-    scrape_timeout: 60s
     metrics_path: "/metrics"
     static_configs:
       - targets: ["cc-prometheus-exporter-itc-ea7e25346311.herokuapp.com"]
         labels:
           group: 'CoreCONNECT'
+
   
