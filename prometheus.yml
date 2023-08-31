@@ -1,5 +1,5 @@
 global:
-  scrape_interval: 30s
+  scrape_interval: 5s
   scrape_timeout: 30s
 
 scrape_configs:
@@ -9,11 +9,10 @@ scrape_configs:
       - targets: ["cc-prometheus-exporter-itc-ea7e25346311.herokuapp.com"]
         labels:
           group: 'CoreCONNECT'
-          
+
 remote_write:
       - url: https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push
         basic_auth:
           username: 1120826
           password: glc_eyJvIjoiOTEyOTU3IiwibiI6InRlc3QtcHJvbWV0aGV1cy1yZW1vdGUtd3JpdGUiLCJrIjoiVWI3OThMOGg4RzFnSXFiODZUM2xwOHdPIiwibSI6eyJyIjoicHJvZC11cy1lYXN0LTAifX0=
-EOF
   
